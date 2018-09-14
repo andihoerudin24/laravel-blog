@@ -84,7 +84,7 @@ class PostsController extends Controller
         if(Auth::user()->role=='admin' || Auth::user()->id == $post->user_id ){
             return view('admin.posts.edit',compact('post'));
         }
-       return redirect('/admin');
+       return abort(401);
 
     }
 
@@ -112,7 +112,7 @@ class PostsController extends Controller
             $post->update($request->all());
             return redirect()->route('admin.posts.index');
         }
-        return redirect('/admin');
+        return abort(401);
 
     }
 
@@ -129,7 +129,7 @@ class PostsController extends Controller
             if(!Post::destroy($id)) return redirect()->back();
             return redirect()->route('admin.posts.index');
         }
-        return redirect('/admin');
+        return abort(401);
 
 
     }

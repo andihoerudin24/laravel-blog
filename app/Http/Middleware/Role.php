@@ -21,7 +21,7 @@ class Role
                          return $next($request);
                      }
               }
-              return redirect('/admin');
+              return abort(401,'Unauthorized');
         }
     }
 }
