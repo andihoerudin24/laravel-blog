@@ -12,7 +12,7 @@
                         <div class="post-thumbnail"><a href="post.html"><img src="{{ asset($post->featured) }}" alt="..." class="img-fluid"></a></div>
                         <div class="post-details">
                             <div class="post-meta d-flex justify-content-between">
-                                <div class="date meta-last">{{$post->published_at}}</div>
+                                <div class="date meta-last">{{$post->published_at->format('d/m/Y')}}</div>
                                 <div class="category"><a href="#">{{$post->category->title}}</a></div>
                             </div>
                             <a href="{{url('/blog/'.$post->slug)}}">
@@ -22,7 +22,7 @@
                                 <footer class="post-footer d-flex align-items-center"><a href="#" class="author d-flex align-items-center flex-wrap">
                                 <div class="avatar"><img src="{{ asset($post->user->avatar) }}" alt="..." class="img-fluid"></div>
                                 <div class="title"><span>{{$post->user->name}}</span></div></a>
-                                <div class="date"><i class="icon-clock"></i>{{$post->published_at}} </div>
+                                <div class="date"><i class="icon-clock"></i>{{$post->date}} </div>
                                 <div class="comments meta-last"><i class="icon-comment"></i>{{ $post->comment->count() }}</div>
                             </footer>
                         </div>

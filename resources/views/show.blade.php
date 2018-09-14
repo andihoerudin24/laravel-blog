@@ -18,7 +18,7 @@
                           <div class="avatar"><img src="{{ asset($posts->user->avatar) }}" alt="..." class="img-fluid"></div>
                           <div class="title"><span>{{ $posts->user->name }}</span></div></a>
                         <div class="d-flex align-items-center flex-wrap">
-                          <div class="date"><i class="icon-clock"></i> {{ $posts->published_at }}</div>
+                          <div class="date"><i class="icon-clock"></i> {{ $posts->date }}</div>
                           <div class="comments meta-last"><i class="icon-comment"></i>{{ $posts->comment->count() }}</div>
                         </div>
                       </div>
